@@ -26,7 +26,8 @@ def predict_text(word:str , Nchr:int ,dir_path : str):
 
 
 
-t = predict_text("شاه",500,r"D:\Parsia Works\python\Project\AI\Shahnameh")
+#t = predict_text("شراب",500,r"D:\Parsia Works\python\Project\AI\Shahnameh")
+#
+#with open('sample.txt','w',encoding="utf-8") as F:
+#   F.write(t)
 
-with open('sample.txt','w',encoding="utf-8") as F:
-    F.write(t)
