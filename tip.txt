@@ -1,2 +1,12 @@
 https://www.kaggle.com/datasets/obulisainaren/multi-cancer
 https://www.kaggle.com/datasets/ashenafifasilkebede/dataset
+
+https://www.analyticsvidhya.com/blog/2019/06/comprehensive-guide-text-summarization-using-deep-learning-python/
+
+https://www.activestate.com/blog/how-to-do-text-summarization-with-python/
+
+https://medium.com/@YasinShafiei/text-summarization-with-deep-learning-python-with-tensorflow-d0f3e329c3d2
+
+********************************************************
+https://www.kaggle.com/code/sandeepbhogaraju/text-summarization-with-seq2seq-model
+********************************************************
