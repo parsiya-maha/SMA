@@ -1,5 +1,5 @@
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from LoadModel import load_model
+from .LoadModel import load_model
 import os
 import shutil
 import numpy as np
@@ -40,13 +40,19 @@ def __add_prepare_image(image_path):
 
     main_path = os.path.split(image_path)[1]
 
-    os.rename(image_path,os.path.join(test_dir,s_test_dir,main_path))
+    shutil.move(image_path,os.path.join(test_dir,s_test_dir,main_path))
 
     return test_dir
 
 
 
-def __delete_dir(dir_path):
+def __delete_dir(dir_path,image_path):
+
+    test_dir = "test_dir"
+    s_test_dir = "test2"
+    main_path = os.path.split(image_path)[1]
+    shutil.move(os.path.join(test_dir,s_test_dir,main_path),image_path)
+    
     shutil.rmtree(dir_path)
 
 
@@ -66,7 +72,7 @@ def predict_image(image_path,h5_path,json_path) :
     predict = model.predict_generator(test_generator,steps = nb_samples)
 
     # clear
-    __delete_dir(test_dir)
+    __delete_dir(test_dir,image_path)
 
     predict_index = np.argmax(predict)
 
