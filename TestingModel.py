@@ -1,5 +1,5 @@
-from BrainTumors import BrainTumorsPredictImage
-from LungCancer import LungCancerPredictImage
+from AI.BrainTumors import BrainTumorsPredictImage
+from AI.LungCancer import LungCancerPredictImage
 import os
 import time
 
@@ -11,7 +11,7 @@ _time1 = time.time() - start
 
 
 start = time.time()
-anser2 = LungCancerPredictImage(r"D:\Parsia Works\python\Project\AI\TestingData\Lung-Benign_Tissue.jpeg")
+anser2 = LungCancerPredictImage(r"D:\Parsia Works\python\Project\TestingData\Lung-Benign_Tissue.jpeg")
 _time2 = time.time() - start
 
 os.system("cls" or "clear")
