@@ -13,7 +13,7 @@ from AI.KidneyStone import KidneyStonePredictImage
 
 ###### The only input these methods ask for is the address of the desired photo for prediction.
 ```py
-# path for brain Tumor
+# path for Brain Tumor
 path1 : str = ...
 # path for Lung Cancer
 path2 : str = ...

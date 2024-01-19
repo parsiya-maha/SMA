@@ -12,6 +12,24 @@ body{
   background-position: center;
 
 }
+.back-video{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+@media (min-aspect-ratio: 16/9){
+  .back-video{
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9){
+  .back-video{
+    width: auto;
+    height: 100%;
+  }
+}
 li{
   list-style: none;
 }
@@ -114,10 +132,12 @@ section#hero{
 }
 
 #hero h1{
-  font-size: 3rem;
+  font-size: 5rem;
   margin-bottom: 1rem;
 }
-
+#hero p{
+  font-size: 2rem;
+}
 @media (max-width: 992px){
   .navbar .links,
   .navbar .action_btn{
