@@ -1,5 +1,6 @@
 from AI.BrainTumors import BrainTumorsPredictImage
 from AI.LungCancer import LungCancerPredictImage
+from AI.KidneyStone import KidneyStonePredictImage
 import os
 import time
 
@@ -13,6 +14,12 @@ _time1 = time.time() - start
 start = time.time()
 anser2 = LungCancerPredictImage(r"D:\Parsia Works\python\Project\TestingData\Lung-Benign_Tissue.jpeg")
 _time2 = time.time() - start
+
+
+start = time.time()
+anser3 = KidneyStonePredictImage(r"D:\Parsia Works\python\Project\TestingData\Tumor- (342).jpg")
+_time3 = time.time() - start
+
 
 os.system("cls" or "clear")
 
@@ -28,17 +35,27 @@ print(f"Time    : {_time2}")
 print(f"Predict : {anser2}")
 print()
 print(30*"-")
+print()
+print(f"Time    : {_time3}")
+print(f"Predict : {anser3}")
+print()
+print(30*"-")
 
 # OUTPUT:
-# ------------------------------
-# 
-# Time    : 1.099116325378418
-# Predict : notumor
-# 
-# ------------------------------
-# 
-# Time    : 0.705603837966919
-# Predict : Lung-Benign_Tissue
-# 
-# ------------------------------
+#------------------------------
+#
+#Time    : 0.9687614440917969
+#Predict : notumor
+#
+#------------------------------
+#
+#Time    : 0.468017578125
+#Predict : Lung-Benign_Tissue
+#
+#------------------------------
+#
+#Time    : 0.5106830596923828
+#Predict : Tumor
+#
+#------------------------------
 
