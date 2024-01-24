@@ -74,9 +74,9 @@ res = ToRecognizePredictImage(image_path : str)
 
 ###### For better understanding, this pipeline works like this:
 ```py
-                                   | BrainTumors |
-pipeline(img) = ToRecognize(img) + | KidneyStone | models
-                                   | LungCancer  |
+                                   | if brain tumors   : BrainTumors(img) 
+pipeline(img) = ToRecognize(img) --| if kidney stone   : KidneyStone(img)
+                                   | if lung cancer    : LungCancer(img)
 ```
 
 ###### In fact, the output of the ToRecognize model along with the photo itself becomes the inputs of three other models :
