@@ -18,5 +18,6 @@ def ToRecognizeAndPredictImage(image_path:str):
     elif rec == 'LungCancer' :
         from .LungCancer import LungCancerPredictImage as predict_func
 
+    pre = predict_func(image_path)
 
-    return predict_func(image_path)
+    return f"{rec} : {pre}"
