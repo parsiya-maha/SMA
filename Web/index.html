@@ -1,55 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Responsive Navbar</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="images/icon-2-big.png" sizes="25x25" type="image/png">  
+    <title>Mr.Doctor</title>
   </head>
   <body>
-    <header>
-      <div class="navbar">
-        <div class="logo"><a href="index.html">Mr.Doctor</a></div>
-        <ul class="links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="project.html">projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <a href="start.html" class="action_btn">Get Started</a>
-        <div class="toggle_btn">
-          <i class="fa-solid fa-bars"></i>
+
+    <!-- header design -->
+
+     <header class="header">
+      <a href="#" class="logo">Mr.Doctor</a>
+
+      <i class='bx bx-menu' id="menu-icon"></i>
+
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <a href="start.html">Get Start</a>
+        <!--<a href="indexPersian.html">فارسی</a>-->
+      </nav>
+    </header>
+
+    <!-- home section design -->
+
+    <section class="home" id="home">
+      <div class="home-content">
+        <h3>Hi,  Predict by</h3>
+        <h1>Mr.Doctor</h1>
+        <h3>And We're working on <span class="multiple-text"></span></h3>
+        <p>You can have high-accuracy predictions of cancer and tumors, and it can 
+          also detect the type of 
+          disease in the photo in addition to determining the extent of the disease.
+        </p>
+        <div class="social-media">
+          <a href="#"><i class='bx bxl-facebook'></i></a>
+          <a href="https://mail.google.com/"><i class='bx bxl-gmail'></i></a>
+          <a href="https://github.com/parsiya-maha/SMA/tree/master"><i class='bx bxl-github'></i></a>
+          <a href="#"><i class='bx bxl-linkedin'></i></a>
+        </div>
+        <a href="#" class="btn">Get Started</a>
+      </div>
+
+      <div class="home-img">
+        <img src="images/home.png" alt="">
+      </div>
+    </section>
+
+    <!-- about section design -->
+
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="images/home(1).png">
+      </div>
+
+      <div class="about-content">
+        <h2 class="heading">About <span>Us</span></h2>
+        <h3>Image Predicter!</h3>
+        <p>Hello. My name is Mohammad Mahdi Khodaei and my friend is Parsia Hassanzadeh.
+           We study in the ninth grade at Allameh Helli 10 School. We have been friends for 
+           several years and have written various projects together. Parsia is responsible for
+            the artificial intelligence part of the projects, and I also do the graphic interface 
+            parts or other parts that are needed for the project. This time we came with a very strong 
+            project that you will get to know about. For more information about us and to see the projects
+             we have done together, click the button below.
+        </p>
+        <a href="https://github.com/parsiya-maha" class="btn">Read More</a>
+      </div>
+    </section>
+
+    <!-- services section design -->
+
+    <section class="services" id="services">
+      <h2 class="heading">Our <span>Services</span></h2>
+
+      <div class="services-container">
+        <div class="services-box">
+          <i class='bx bx-brain'></i>
+          <h3>Brain Tumors</h3>
+          <p>A brain tumor is a growth of cells in the brain or near it.
+             Brain tumors can happen in the brain tissue. Brain tumors also can 
+             happen near the brain tissue. Nearby locations include nerves, the 
+             pituitary gland, the pineal gland, and the membranes that cover the surface of the brain.
+          </p>
+          <a href="https://www.mayoclinic.org/diseases-conditions/brain-tumor/symptoms-causes/syc-20350084#:~:text=A%20brain%20tumor%20is%20a,the%20surface%20of%20the%20brain." class="btn">Read More</a>
+        </div>
+
+        <div class="services-box">
+          <i class='bx bxs-capsule' ></i>
+           <h3>KidneyStone</h3>
+          <p>Kidney stones (also called renal calculi, nephrolithiasis or urolithiasis) are
+             hard deposits made of minerals and salts that form inside your kidneys. Diet, excess 
+             body weight, some medical conditions,
+             and certain supplements and medications are among the many causes of kidney stones.
+          </p>
+          <a href="https://www.mayoclinic.org/diseases-conditions/kidney-stones/symptoms-causes/syc-20355755#:~:text=Kidney%20stones%20(also%20called%20renal,many%20causes%20of%20kidney%20stones." class="btn">Read More</a>
+        </div>
+
+        <div class="services-box">
+          <i class='bx bx-plus-medical'></i>
+          <h3>LungCancer</h3>
+          <p>The most common types of lung cancer are non-small cell carcinoma (NSCLC)
+             and small cell carcinoma (SCLC). NSCLC is more common and grows slowly, while
+              SCLC is less common but often grows quickly. Lung cancer is
+             a significant public health concern, causing a considerable number of deaths globally.
+          </p>
+          <a href="https://www.who.int/news-room/fact-sheets/detail/lung-cancer#:~:text=The%20most%20common%20types%20of,considerable%20number%20of%20deaths%20globally." class="btn">Read More</a>
         </div>
       </div>
-    </header>
-    <div class="hero1">
-      <video autoplay loop muted plays-inline class="back-video">
-        <source src="backgroud video.mp4">
-      </video>
-    </div>
-    <main>
-      <section id="hero">
-        <h1>Welcome</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing <br>
-           rem accusamus facilis, facere dolor.</p>
+    </section>
 
-      </section>
-    </main>
-    <script>
-      const toggleBtn = document.querySelector('.toggle_btn')
-      const toggleBtnIcon = document.querySelector('.toggle_btn i')
-      const dropDownMenu = document.querySelector('.dropdown_menu')
-      
-      toggleBtn.onclick = function(){
-        dropDownMenu.classList.toggle('open')
-        const isOpen = dropDownMenu.classList.contains('open')
+    <!-- portfolio section design -->
 
-        toggleBtnIcon.classList = isOpen
-        ? 'fa-solid fa-xmark'
-        : 'fa-solid fa-bars'
-      }
-    </script>
+    <section class="portfolio" id="portfolio">
+      <h2 class="heading">Lastest <span>Project</span></h2>
+
+      <div class="portfolio-container">
+        <div class="portfolio-box">
+          <img src="images/brain tumor 1.jpg" alt="">
+          <div class="portfolio-layer">
+            <h4>brainTumor</h4>
+            <p>Accuracy:</p> 
+            <div class="skill">
+              <div class="outer">
+                <div class="inner">
+                  <div id="number">
+                    97%
+                  </div>
+                </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="180px" height="180px">
+                <defs>
+                    <linearGradient id="GradientColor">
+                    <stop offset="0%" stop-color="#e91e63" />
+                    <stop offset="100%" stop-color="#673ab7" />
+                    </linearGradient>
+                </defs>
+                    <circle cx="85" cy="85" r="75" stroke-linecap="round" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!--**************************************************************-->
+
+        <div class="portfolio-box">
+          <img src="images/lung cancer.jpg" alt="">
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              sed do eiusmod</p>
+            
+          </div>
+        </div>
+
+        <!--*************************************************************-->
+
+        <div class="portfolio-box">
+          <img src="images/kidney stone.jpg" alt="">
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              sed do eiusmod
+            </p>
+            <a href="#"><i class='bx bx-link-external'></i></a>
+          </div>
+        </div>
+
+        <!--*************************************************************-->
+
+        <div class="portfolio-box">
+          <img src="images/portfolio4.jpg" alt="">
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              sed do eiusmod
+            </p>
+            <a href="#"><i class='bx bx-link-external'></i></a>
+          </div>
+        </div>
+
+        <!--*************************************************************-->
+
+        <div class="portfolio-box">
+          <img src="images/portfolio5.jpg" alt="">
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              sed do eiusmod
+            </p>
+            <a href="#"><i class='bx bx-link-external'></i></a>
+          </div>
+        </div>
+
+        <!--*************************************************************-->
+
+        <div class="portfolio-box">
+          <img src="images/portfolio6.jpg" alt="">
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              sed do eiusmod
+            </p>
+            <a href="#"><i class='bx bx-link-external'></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact section design -->
+
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Us!</span></h2>
+
+      <form action="https://formspree.io/f/xqkravle" method="post">
+        <div class="input-box">
+          <input type="text" name="first" placeholder="Full Name" autocomplete="off" required>
+          <input type="text" name="last" placeholder="Last Name" autocomplete="off" required>
+        </div>
+
+        <div class="input-box">
+          <input type="number" name="number" placeholder="Mobile Number" autocomplete="off" required>
+          <input type="email" name="email" placeholder="Email Address" autocomplete="off" required>
+        </div>
+        <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message" autocomplete="off" required></textarea>
+        <input type="submit" value="Send Message" class="btn">
+      </form>
+    </section>
+
+    <!-- footer design -->
+
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2024 by Mr.Doctor | All Rights Reserved.</p>
+      </div>
+
+      <div class="footer-iconTop">
+        <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+      </div>
+    </footer>    
+
+
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- typed js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- custom js -->
+    <script src="js/script.js"></script>
   </body>
 </html>
