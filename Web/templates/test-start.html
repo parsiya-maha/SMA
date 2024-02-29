@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="{{ url_for('static', path='/css/test-start.css') }}" rel="stylesheet">
+    <link rel="icon" href="static/img/icon-2-big.png" sizes="25x25" type="image/png">  
+    <title>Mr.Doctor</title>
+  </head>
+  <body>
+
+    <!-- header design -->
+
+     <header class="header">
+      <a href="#" class="logo">Mr.Doctor</a>
+
+      <i class='bx bx-menu' id="menu-icon"></i>
+
+      <nav class="navbar">
+        <a href="http://127.0.0.1:8000/#home" >Home</a>
+        <a href="http://127.0.0.1:8000/#about">About</a>
+        <a href="http://127.0.0.1:8000/#services">Services</a>
+        <a href="http://127.0.0.1:8000/#portfolio">Articles</a>
+        <a href="http://127.0.0.1:8000/#contact">Contact</a>
+        <a href="templates/test-start.html" class="active">Get Start</a>
+        <!--<a href="indexPersian.html">فارسی</a>-->
+      </nav>
+    </header>
+    <div class="box">
+        <form action="main.html">
+            <h2>Sign in</h2>
+            <div class="inputBox">
+                <input class="input" type="text" required="required">
+                <span>Username</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="password" required="required">
+                <span>Password</span>
+                <i></i>
+            </div>
+            <div class="links">
+                <a href="#">Forget Password</a>
+                <a href="#">SingUp</a>
+            </div>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    <h1 class="brain"><i class='bx bx-brain' id="brain-login"></i> Brain</h1><h1 class="tumor"> Tumor</h1>
+    <h1 class="lung"><i class='bx bxs-capsule' id="brain-login"></i> Lung</h1><h1 class="cancer"> Cancer</h1>
+    <h1 class="kidney"><i class='bx bx-plus-medical' id="brain-login"></i> Kidney</h1><h1 class="stone"> Stone</h1>
+  </body>
+</html>

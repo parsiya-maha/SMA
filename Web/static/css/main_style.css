@@ -237,11 +237,10 @@ html{
 
   .dropdown{
     position: relative;
-    margin-top: 100px;
     width: 300px;
     height: 50px;
     margin-left: 59%;
-    margin-top: -525px;
+    margin-top: -325px;
 }
 .dropdown::before{
     content: '';
@@ -335,6 +334,9 @@ a.btn{
   margin-left: 750px;
   margin-top: 75px;
   
+}
+.brain-login{
+  font-size: 1.2rem;
 }
   
   

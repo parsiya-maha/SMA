@@ -94,7 +94,7 @@ section {
   }
   
   .navbar{
-    width: 300px;
+    width: -110px;
     height: 60px;
     max-width: 1200px;
     margin: 0 auto;
@@ -219,11 +219,13 @@ section {
   }
   .login-box form{
     width: 100%;
+    margin-left: 75%;
     padding: 0 50px;
   }
   h2{
     font-size: 2em;
     color: #0ef;
+    margin-left: 115%;
     text-align: center;
   }
   .input-box{
@@ -309,6 +311,16 @@ section {
   .singup-link a:hover{
     text-decoration: underline;
   }
+  .home-img img{
+    width: 35vw;
+    animation: floatImage 4s ease-in-out infinite;
+}
+.home-img img{
+  width: 33vw;
+  margin-top: -37rem;
+  position: absolute;
+  margin-left: 10%;
+}
 
 
 

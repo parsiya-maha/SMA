@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" href="images/icon-2-big.png" sizes="25x25" type="image/png">  
+    <link href="{{ url_for('static', path='/css/style.css') }}" rel="stylesheet">
+    <link rel="icon" href="static/img/icon-2-big.png" sizes="25x25" type="image/png">  
     <title>Mr.Doctor</title>
   </head>
   <body>
@@ -24,10 +24,11 @@
         <a href="#services">Services</a>
         <a href="#portfolio">Articles</a>
         <a href="#contact">Contact</a>
-        <a href="test-start.html">Get Start</a>
+        <a href="templates/test-start.html">Get Start</a>
         <!--<a href="indexPersian.html">فارسی</a>-->
       </nav>
     </header>
+  
 
     <!-- home section design -->
 
@@ -46,11 +47,11 @@
           <a href="https://github.com/parsiya-maha/SMA/tree/master"><i class='bx bxl-github'></i></a>
           <a href="#"><i class='bx bxl-linkedin'></i></a>
         </div>
-        <a href="test-start.html" class="btn">Get Started</a>
+        <a href="templates/test-start.html" class="btn">Get Started</a>
       </div>
 
       <div class="home-img">
-        <img src="images/home.png" alt="">
+        <img src="static/img/home.png" alt="">
       </div>
     </section>
 
@@ -58,7 +59,7 @@
 
     <section class="about" id="about">
       <div class="about-img">
-        <img src="images/about.png">
+        <img src="static/img/about.png">
       </div>
 
       <div class="about-content">
@@ -124,9 +125,9 @@
 
       <div class="portfolio-container">
         <div class="portfolio-box">
-          <img src="images/portfolio1.jpg" alt="">
+          <img src="static/img/brain tumor 1.jpg" alt="">
           <div class="portfolio-layer">
-            <h4>Web Design</h4>
+            <h4>Brain Tumor</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod</p>
               <a href="articlebrain.html"><i class='bx bx-search'></i></a>
@@ -136,9 +137,9 @@
         <!--**************************************************************-->
 
         <div class="portfolio-box">
-          <img src="images/portfolio2.jpg" alt="">
+          <img src="static/img/lung cancer.jpg" alt="">
           <div class="portfolio-layer">
-            <h4>Web Design</h4>
+            <h4>Lung Cancer</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod</p>
               <a href="articleKidney.html"><i class='bx bx-search'></i></a>
@@ -148,9 +149,9 @@
         <!--*************************************************************-->
 
         <div class="portfolio-box">
-          <img src="images/portfolio3.jpg" alt="">
+          <img src="static/img/kidney stone.jpg" alt="">
           <div class="portfolio-layer">
-            <h4>Web Design</h4>
+            <h4>Kidney Stone</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod
             </p>
