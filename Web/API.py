@@ -3,6 +3,7 @@ from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+import os
 
 #make api sample
 app = FastAPI()
@@ -12,8 +13,6 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 #make template smaplle
 templates = Jinja2Templates(directory="templates")
-
-
 
 # ---------------------------------------------------------------------------------------- home
 
@@ -75,9 +74,13 @@ async def article_kidney(request : Request):
 async def article_lung(request : Request):
     return templates.TemplateResponse(request=request, name="articlelung.html")
 
+# ---------------------------------------------------------------------------------------- upload_image
 
+@app.post("/upload",
+        tags=["Upload Image"],
+        summary="Upload image and give the AI result."
+        )
 
-@app.post("/upload")
 async def upload_image(image: UploadFile = File(...), option: str = Form(...)):
     contents = await image.read()
     # Here you can do something with the image data, for example, save it to disk
@@ -85,3 +88,9 @@ async def upload_image(image: UploadFile = File(...), option: str = Form(...)):
 
     with open(path, "wb") as f:
         f.write(contents)
+
+    if os.path.exists(path):
+        return {"massage":"Successfully","path":path,"result":"..."}
+
+    else:
+        return {"massage":"ERROR in process","path":None,"result":"..."}
