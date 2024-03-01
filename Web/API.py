@@ -1,9 +1,16 @@
 from fastapi import FastAPI, Request
-from fastapi import FastAPI, File, UploadFile, Form
+from fastapi import FastAPI, File, UploadFile, Form , Body
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import os
+from SMAmodel import LoginDataset,data_path,data_password
+
+from AI.BrainTumors import BrainTumorsPredictImage
+from AI.LungCancer import LungCancerPredictImage
+from AI.KidneyStone import KidneyStonePredictImage
+from AI.ToRecognize import ToRecognizePredictImage
+from AI import ToRecognizeAndPredictImage
 
 #make api sample
 app = FastAPI()
@@ -76,21 +83,64 @@ async def article_lung(request : Request):
 
 # ---------------------------------------------------------------------------------------- upload_image
 
-@app.post("/upload",
+@app.post("/templates/main.html/upload",
         tags=["Upload Image"],
         summary="Upload image and give the AI result."
         )
 
 async def upload_image(image: UploadFile = File(...), option: str = Form(...)):
-    contents = await image.read()
-    # Here you can do something with the image data, for example, save it to disk
-    path = option + "_" + image.filename
+    try:
+        contents = await image.read()
+        # Here you can do something with the image data, for example, save it to disk
+        path = option + "_" + image.filename
 
-    with open(path, "wb") as f:
-        f.write(contents)
+        with open(path, "wb") as f:
+            f.write(contents)
 
-    if os.path.exists(path):
-        return {"massage":"Successfully","path":path,"result":"..."}
+        if option == "BrainTumors":
+            from AI.BrainTumors import BrainTumorsPredictImage as predict_model
 
-    else:
-        return {"massage":"ERROR in process","path":None,"result":"..."}
+        elif option == "LungCancer":
+            from AI.LungCancer import LungCancerPredictImage as predict_model
+
+        elif option == "KidneyStone":
+            from AI.KidneyStone import KidneyStonePredictImage as predict_model
+
+        elif option == "ToRecognize":
+            from AI.ToRecognize import ToRecognizePredictImage as predict_model
+
+        elif option == "ToRecognizeAndPredict":
+            from AI import ToRecognizeAndPredictImage as predict_model
+
+        else :
+            return {"massage":"ERROR in process","path":path,"result":f"No {option} model found."}
+
+        # predict model
+        res = predict_model(path)
+
+        # remove download file
+        os.remove(path)
+        
+        return {"massage":"Successfully","path":path,"result":res}
+
+    except Exception as Ex:
+            return {"ERROR massage":str(Ex),
+            "ERROR type":Ex.__class__.__name__
+            }
+
+# ----------------------------------------------------------------------------------------
+
+@app.post("/templates/test-start.html/login",
+        tags=["Login"],
+        summary="Post login data to api and check them."
+        )
+
+async def check_input_data(username:str = Form(...),password:str = Form(...)):
+    datasets_sample = LoginDataset(data_path,data_password)
+
+    res = datasets_sample.match_username_password(username,password)
+
+    if res : 
+        return {"massage":"Successfully login","massage_bool":True}
+
+    return {"massage":"Username or Password was wrong","massage_bool":False}
