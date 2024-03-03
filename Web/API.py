@@ -1,16 +1,21 @@
+# ---------------------------------------------------------------------------------------- Imports
+
 from fastapi import FastAPI, Request
 from fastapi import FastAPI, File, UploadFile, Form , Body
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import os
-from SMAmodel import LoginDataset,data_path,data_password
+
+from SMAmodel import LoginDataset,data_path,data_password,is_image_path,image_formats
 
 from AI.BrainTumors import BrainTumorsPredictImage
 from AI.LungCancer import LungCancerPredictImage
 from AI.KidneyStone import KidneyStonePredictImage
 from AI.ToRecognize import ToRecognizePredictImage
 from AI import ToRecognizeAndPredictImage
+
+# ---------------------------------------------------------------------------------------- Instance vars
 
 #make api sample
 app = FastAPI()
@@ -94,6 +99,11 @@ async def upload_image(image: UploadFile = File(...), option: str = Form(...)):
         # Here you can do something with the image data, for example, save it to disk
         path = option + "_" + image.filename
 
+        if not is_image_path(path):
+            
+            return {"massage":"ERROR (bad format of image.)","path":path,"result":f"image format\
+ most be {','.join(image_formats)}"}
+
         with open(path, "wb") as f:
             f.write(contents)
 
@@ -128,14 +138,14 @@ async def upload_image(image: UploadFile = File(...), option: str = Form(...)):
             "ERROR type":Ex.__class__.__name__
             }
 
-# ----------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------- check_login_input_data
 
 @app.post("/templates/test-start.html/login",
         tags=["Login"],
         summary="Post login data to api and check them."
         )
 
-async def check_input_data(username:str = Form(...),password:str = Form(...)):
+async def check_login_input_data(username:str = Form(...),password:str = Form(...)):
     datasets_sample = LoginDataset(data_path,data_password)
 
     res = datasets_sample.match_username_password(username,password)
