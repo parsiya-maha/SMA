@@ -6,7 +6,7 @@ from .PredictImage import predict_image
 from .LoadModel import load_model
 import os
 
-base_path = r"D:\Parsia Works\python\Project\AI\ToRecognize"
+base_path = os.path.join(os.getcwd(),"AI\ToRecognize")
 
 model_json = os.path.join(base_path,"model.json")
 model_h5 = os.path.join(base_path,"model.h5")
