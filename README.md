@@ -1,4 +1,4 @@
-# **What is SMA ?**
+# **What is SMA (*Mr.Doctor*)?**
 
 The SMA repository is actually an interface for the **Mr.Doctor** project.
 In the README of this repository you can get all the information about Mr. Docotr.
